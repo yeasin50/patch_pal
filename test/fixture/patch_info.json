@@ -1,0 +1,17 @@
+{
+  "packageName": "com.yeasin50.patch_pal",
+  "version": "1.0.0",
+  "items": [
+    {
+      "name": "number of mango",
+      "value": 3,
+      "message": "added 3 mango"
+    },
+    {
+      "name": "rain",
+      "value": true,
+      "message": "enabled rain based on weather"
+    }
+  ],
+  "updates": ["looking for updates..."]
+}
