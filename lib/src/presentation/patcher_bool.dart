@@ -10,7 +10,7 @@ class PatcherViewOnFalse extends StatelessWidget {
     super.key,
     required this.patchItemName,
     this.message,
-    this.child,
+    this.onPositive,
   });
 
   final String patchItemName;
@@ -21,12 +21,14 @@ class PatcherViewOnFalse extends StatelessWidget {
   /// If not provided, the default message will be shown.
   final String? message;
 
-  final Widget? child;
+  final Widget? onPositive;
 
   @override
   Widget build(BuildContext context) {
     final item = PatchPal().getItem(patchItemName);
 
-    return item?.value == true ? child ?? Text(message ?? item?.message ?? _defaultMessage) : const SizedBox.shrink();
+    return item?.value == true ? 
+         Text(message ?? item?.message ?? _defaultMessage) 
+         : onPositive ?? const SizedBox.shrink();
   }
 }

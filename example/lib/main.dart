@@ -29,8 +29,8 @@ class MainApp extends StatelessWidget {
                         message: 'This feature is not available right now.',
                       ),
                       PatcherViewOnFalse(
-                        patchItemName: 'umbrella',
-                        message: 'this will be invisible',
+                        patchItemName: 'unknown',
+                        onPositive: Text('it is available now!'),
                       ),
                     ],
                   ),
