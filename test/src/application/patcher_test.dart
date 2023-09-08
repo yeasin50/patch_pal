@@ -1,19 +1,19 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:patch_pal/src/application/patcher.dart';
+import 'package:patch_pal/src/application/patch_pal.dart';
 import 'package:patch_pal/src/domain/models/patch_item.dart';
 
 void main() {
   //!testing with a json file from github
   //!'https://raw.githubusercontent.com/yeasin50/AssetsFor_/master/apps/patch_pal/test.json'
   group('Patcher', () {
-    late Patcher patcher;
+    late PatchPal patcher;
 
     setUp(() async {
-      patcher = Patcher();
+      patcher = PatchPal();
       await patcher.setUp('https://raw.githubusercontent.com/yeasin50/AssetsFor_/master/apps/patch_pal/test.json');
     });
     test(' should be singleton', () {
-      expect(Patcher(), Patcher());
+      expect(PatchPal(), PatchPal());
     });
 
     test('should be ready after setup', () async {

@@ -17,10 +17,10 @@ abstract interface class IPatcher {
   PatchItem? getItem(String name);
 }
 
-class Patcher implements IPatcher {
-  Patcher._();
-  static final Patcher _instance = Patcher._();
-  factory Patcher() => _instance;
+class PatchPal implements IPatcher {
+  PatchPal._();
+  static final PatchPal _instance = PatchPal._();
+  factory PatchPal() => _instance;
 
   late String _configLocation;
   late PatchRepo _repo;
