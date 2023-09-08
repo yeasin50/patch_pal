@@ -9,7 +9,7 @@ import '../domain/models/patch_item.dart';
 import '../domain/repository/update_notifier_repo.dart';
 
 abstract interface class IPatcher {
-  FutureOr<void> setUp(String configLocation);
+  Future<void> setUp(String configLocation);
   bool get isReady;
 
   /// Returns the patch item from the given name.
@@ -33,7 +33,7 @@ class PatchPal implements IPatcher {
   bool get hasError => _lastError.isNotEmpty;
 
   @override
-  FutureOr<void> setUp(String configLocation) async {
+  Future<void> setUp(String configLocation) async {
     _isReady = false;
     _configLocation = configLocation;
     _repo = PatchRepoImpl(configLocation: _configLocation);
