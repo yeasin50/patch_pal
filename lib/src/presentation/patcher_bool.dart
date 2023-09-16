@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import '../../patch_pal.dart';
 
-//TODO: add more customization options for Views
 /// returns a [PatcherViewOnFalse] if the patch item is not found and
 /// value is false.
 class PatcherViewOnFalse extends StatelessWidget {
@@ -25,10 +24,8 @@ class PatcherViewOnFalse extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final item = PatchPal().getItem(patchItemName);
+    final item = PatchPal.getItem(patchItemName);
 
-    return item?.value == true ? 
-         Text(message ?? item?.message ?? _defaultMessage) 
-         : onPositive ?? const SizedBox.shrink();
+    return item?.value == true ? Text(message ?? item?.message ?? _defaultMessage) : onPositive ?? const SizedBox.shrink();
   }
 }

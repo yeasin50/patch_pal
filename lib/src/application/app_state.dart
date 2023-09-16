@@ -1,5 +1,6 @@
 import '../domain/models/patch_info.dart';
-//TODO: will work on this later
+
+@Deprecated('This is not implemented yet')
 class AppState {
   AppState.init()
       : patchInfo = null,

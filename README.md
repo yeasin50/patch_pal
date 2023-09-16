@@ -4,9 +4,9 @@
 
 `patch_pal` package help to enable/disable feature of app from json file. use raw git [path like this](https://github.com/yeasin50/AssetsFor_/blob/master/apps/patch_pal/test.json)
 
-## Features
+<!-- ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+  -->
 
 ## Getting started
 
@@ -50,7 +50,7 @@ to [`/example`](/example) folder.
 
    ```dart
    /// You need to setup the path, you can use [FutureBuilder]
-   PatchPal().setUp(yourJsonConfigFilePath);
+   PatchPal.setUp(yourJsonConfigFilePath);
    ```
 
 3. Then you can get value using PatchItemName
@@ -59,8 +59,9 @@ to [`/example`](/example) folder.
    PatcherViewOnFalse(patchItemName: 'rain' )
    ```
 
-### TODO:
+### TODO
 
 - [ ] Config(Json) generator
 - [ ] version based features
 - [ ] alert widgets and views
+- [ ] stream or ValueLister

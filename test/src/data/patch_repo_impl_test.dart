@@ -52,7 +52,7 @@ void main() {
         mockHttpClient.get(Uri.parse(testUrl)),
       ).thenThrow(PatchNetworkException());
 
-      expect(patchRepo.checkUpdate(), throwsA(TypeMatcher<PatchNetworkException>()));
+      expect(patchRepo.checkUpdate(), throwsA(const TypeMatcher<PatchNetworkException>()));
     });
 
     test('checkUpdate throws PatchUnsupportedFormat on empty body', () async {
@@ -61,7 +61,7 @@ void main() {
       );
       final result = patchRepo.checkUpdate();
       expect(result, throwsException);
-      expect(result, throwsA(TypeMatcher<PatchUnsupportedFormat>()));
+      expect(result, throwsA(const TypeMatcher<PatchUnsupportedFormat>()));
     });
   });
 }
