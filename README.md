@@ -1,6 +1,7 @@
 # PatchPal
 
 [![Flutter CI](https://github.com/yeasin50/patch_pal/actions/workflows/flutter_test.yaml/badge.svg)](https://github.com/yeasin50/patch_pal/actions/workflows/flutter_test.yaml)
+[![codecov](https://codecov.io/gh/yeasin50/patch_pal/branch/master/graph/badge.svg)](https://codecov.io/gh/yeasin50/patch_pal)
 
 `patch_pal` package help to enable/disable feature of app from json file. use raw git [path like this](https://github.com/yeasin50/AssetsFor_/blob/master/apps/patch_pal/test.json)
 
