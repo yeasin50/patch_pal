@@ -30,13 +30,15 @@ class PatchInfo {
     return PatchInfo(
       packageName: map['packageName'] ?? '',
       version: map['version'] ?? '',
-      items: List<PatchItem>.from(map['items']?.map((x) => PatchItem.fromMap(x))),
+      items:
+          List<PatchItem>.from(map['items']?.map((x) => PatchItem.fromMap(x))),
       updates: List<String>.from(map['updates']),
     );
   }
 
   String toJson() => json.encode(toMap());
-  factory PatchInfo.fromJson(String source) => PatchInfo.fromMap(json.decode(source));
+  factory PatchInfo.fromJson(String source) =>
+      PatchInfo.fromMap(json.decode(source));
 
   @override
   String toString() {

@@ -7,7 +7,6 @@ import 'package:patch_pal/src/domain/models/patch_exception.dart';
 import '../domain/models/patch_info.dart';
 import '../domain/repository/update_notifier_repo.dart';
 
-
 ///
 /// PatchPalImplement is the implementation of [PatchPal]
 /// It is used internally by [PatchPal] to get the patch info from the server.
@@ -24,7 +23,9 @@ class PatchRepoImpl extends PatchRepo {
       if (response.statusCode == 200) {
         final data = jsonDecode(response.body);
 
-        if (data is! Map<String, dynamic> || data.isEmpty) throw PatchUnsupportedFormat();
+        if (data is! Map<String, dynamic> || data.isEmpty) {
+          throw PatchUnsupportedFormat();
+        }
 
         final info = PatchInfo.fromMap(data);
         return info;

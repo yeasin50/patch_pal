@@ -20,7 +20,8 @@ void main() {
 
     setUp(() {
       mockHttpClient = MockClient();
-      patchRepo = PatchRepoImpl(configLocation: testUrl, httpClient: mockHttpClient);
+      patchRepo =
+          PatchRepoImpl(configLocation: testUrl, httpClient: mockHttpClient);
     });
 
     test('checkUpdate returns PatchInfo on success', () async {
@@ -34,7 +35,8 @@ void main() {
       };
       final responseMock = http.Response(json.encode(responseBody), 200);
 
-      when(mockHttpClient.get(Uri.parse(testUrl))).thenAnswer((_) async => responseMock);
+      when(mockHttpClient.get(Uri.parse(testUrl)))
+          .thenAnswer((_) async => responseMock);
 
       final result = await patchRepo.checkUpdate();
 
@@ -52,7 +54,8 @@ void main() {
         mockHttpClient.get(Uri.parse(testUrl)),
       ).thenThrow(PatchNetworkException());
 
-      expect(patchRepo.checkUpdate(), throwsA(const TypeMatcher<PatchNetworkException>()));
+      expect(patchRepo.checkUpdate(),
+          throwsA(const TypeMatcher<PatchNetworkException>()));
     });
 
     test('checkUpdate throws PatchUnsupportedFormat on empty body', () async {

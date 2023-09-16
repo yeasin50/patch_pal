@@ -15,6 +15,6 @@ class PatchNetworkException extends PatchException {
 class PatchUnsupportedFormat extends PatchException {
   @override
   String toString() {
-    return  'PatchUnsupportedFormat';
+    return 'PatchUnsupportedFormat';
   }
 }
