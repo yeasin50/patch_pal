@@ -1,6 +1,9 @@
+import 'package:flutter/foundation.dart';
+
 import '../models/patch_info.dart';
 import 'package:http/http.dart' as http;
 
+@protected
 abstract class PatchRepo {
   const PatchRepo({required this.configLocation, this.httpClient});
 

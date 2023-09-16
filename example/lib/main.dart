@@ -11,7 +11,7 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FutureBuilder<void>(
-      future: PatchPal().setUp('https://raw.githubusercontent.com/yeasin50/AssetsFor_/master/apps/patch_pal/test.json'),
+      future: PatchPal.setUp('https://raw.githubusercontent.com/yeasin50/AssetsFor_/master/apps/patch_pal/test.json'),
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.done) {
           if (snapshot.hasError) {

@@ -4,8 +4,8 @@ import '../../patch_pal.dart';
 
 /// returns a [PatcherViewOnFalse] if the patch item is not found and
 /// value is false.
-class PatcherViewOnFalse extends StatelessWidget {
-  const PatcherViewOnFalse({
+class PatcherViewOnFalse2 extends StatelessWidget {
+  const PatcherViewOnFalse2({
     super.key,
     required this.patchItemName,
     this.message,
@@ -24,7 +24,7 @@ class PatcherViewOnFalse extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final item = PatchPal().getItem(patchItemName);
+    final item = PatchPal.getItem(patchItemName);
 
     return item?.value == true ? child ?? Text(message ?? item?.message ?? _defaultMessage) : const SizedBox.shrink();
   }

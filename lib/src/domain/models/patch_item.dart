@@ -41,7 +41,7 @@ class PatchItem {
   factory PatchItem.fromMap(Map<String, dynamic> map) {
     return PatchItem(
       name: map['name'] ?? '',
-      value: map['value'] ?? null,
+      value: map['value'],
       message: map['message'],
     );
   }
