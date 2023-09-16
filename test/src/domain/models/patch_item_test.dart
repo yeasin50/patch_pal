@@ -17,7 +17,8 @@ void main() {
 
     test('different value should not be identical message', () {
       const patchItem1 = PatchItem(name: 'enable rain', value: true);
-      const patchItem2 = PatchItem(name: 'enable rain', value: false, message: 'test');
+      const patchItem2 =
+          PatchItem(name: 'enable rain', value: false, message: 'test');
       expect(patchItem1, isNot(patchItem2));
     });
   });

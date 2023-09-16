@@ -26,6 +26,8 @@ class PatcherViewOnFalse2 extends StatelessWidget {
   Widget build(BuildContext context) {
     final item = PatchPal.getItem(patchItemName);
 
-    return item?.value == true ? child ?? Text(message ?? item?.message ?? _defaultMessage) : const SizedBox.shrink();
+    return item?.value == true
+        ? child ?? Text(message ?? item?.message ?? _defaultMessage)
+        : const SizedBox.shrink();
   }
 }

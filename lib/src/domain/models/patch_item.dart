@@ -48,16 +48,21 @@ class PatchItem {
 
   String toJson() => json.encode(toMap());
 
-  factory PatchItem.fromJson(String source) => PatchItem.fromMap(json.decode(source));
+  factory PatchItem.fromJson(String source) =>
+      PatchItem.fromMap(json.decode(source));
 
   @override
-  String toString() => 'PatchItem(name: $name, value: $value, message: $message)';
+  String toString() =>
+      'PatchItem(name: $name, value: $value, message: $message)';
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) return true;
 
-    return other is PatchItem && other.name == name && other.value == value && other.message == message;
+    return other is PatchItem &&
+        other.name == name &&
+        other.value == value &&
+        other.message == message;
   }
 
   @override

@@ -6,7 +6,8 @@ void main() {
   //!'https://raw.githubusercontent.com/yeasin50/AssetsFor_/master/apps/patch_pal/test.json'
   group('PatchPal', () {
     setUp(() async {
-      await PatchPal.setUp('https://raw.githubusercontent.com/yeasin50/AssetsFor_/master/apps/patch_pal/test.json');
+      await PatchPal.setUp(
+          'https://raw.githubusercontent.com/yeasin50/AssetsFor_/master/apps/patch_pal/test.json');
     });
     // test(' should be singleton', () {
     //   expect(PatchPal(), PatchPal());
