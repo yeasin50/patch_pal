@@ -23,8 +23,9 @@ class PatchRepoImpl extends PatchRepo {
       if (response.statusCode == 200) {
         final data = jsonDecode(response.body);
 
-        if (data is! Map<String, dynamic> || data.isEmpty)
+        if (data is! Map<String, dynamic> || data.isEmpty) {
           throw PatchUnsupportedFormat();
+        }
 
         final info = PatchInfo.fromMap(data);
         return info;
