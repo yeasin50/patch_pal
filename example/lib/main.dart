@@ -10,41 +10,96 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FutureBuilder<void>(
-      future: PatchPal.setUp(
-          'https://raw.githubusercontent.com/yeasin50/AssetsFor_/master/apps/patch_pal/test.json'),
-      builder: (context, snapshot) {
-        if (snapshot.connectionState == ConnectionState.done) {
-          if (snapshot.hasError) {
-            return const Center(
-              child: Text('Error'),
-            );
-          } else {
-            return const MaterialApp(
-              home: Scaffold(
-                body: Center(
-                  child: Column(
+    return MaterialApp(
+      home: Scaffold(
+        body: Center(
+          child: FutureBuilder<void>(
+            future: PatchPal.setUp(
+              'https://raw.githubusercontent.com/yeasin50/AssetsFor_/master/apps/patch_pal/test.json',
+            ),
+            builder: (context, snapshot) {
+              if (snapshot.connectionState == ConnectionState.done) {
+                if (snapshot.hasError) {
+                  return const Center(
+                    child: Text('Error'),
+                  );
+                } else {
+                  return Column(
+                    mainAxisSize: MainAxisSize.max,
                     children: [
-                      PatcherViewOnFalse(
+                      PatchPal.switcher(
                         patchItemName: 'rain',
-                        message: 'This feature is not available right now.',
+                        onPatch: const Text('It is raining'),
+                        onNoPatch: const Text('This is a text'),
                       ),
-                      PatcherViewOnFalse(
+                      PatchPal.switcher(
+                        patchItemName: 'rain',
+                        onNoPatch: const Text('This is a text'),
+                      ),
+                      PatchPal.switcher(
                         patchItemName: 'unknown',
-                        onPositive: Text('it is available now!'),
+                        onNoPatch: const Text('This is a text'),
+                        tristate: true,
+                      ),
+                      Divider(),
+                      Text("Overlay"),
+                      Container(
+                        height: 200,
+                        width: 200,
+                        color: Colors.red,
+                        child: PatchPal.overlay(
+                          patchItemName: 'rain',
+                          alignment: Alignment.bottomCenter,
+                          child: const Text('Beta test,raining'),
+                        ),
+                      ),
+                      Divider(),
+                      Text("Dialog"),
+                      Builder(builder: (ctx) {
+                        PatchPal.dialog(
+                          context: context,
+                          patchItemName: 'rain',
+                          title: 'Rain',
+                          message: 'It is raining',
+                          positiveText: 'Ok',
+                          negativeText: 'Cancel',
+                          onPositive: () {
+                            Navigator.pop(context);
+                          },
+                          onNegative: () {
+                            Navigator.pop(context);
+                          },
+                        );
+
+                        return Text('auto show dialog');
+                      }),
+                      Divider(),
+                      Text("View"),
+                      PatchPal.view(
+                        patchItemName: 'rain',
+                        onPositive: const Text('It is raining'),
+                        child: const Text('This is a text'),
+                      ),
+                      PatchPal.view(
+                        patchItemName: 'rain',
+                        child: const Text('This is a text'),
+                      ),
+                      PatchPal.view(
+                        patchItemName: 'unknown',
+                        child: const Text('This is a text'),
                       ),
                     ],
-                  ),
-                ),
-              ),
-            );
-          }
-        } else {
-          return const Center(
-            child: CircularProgressIndicator(),
-          );
-        }
-      },
+                  );
+                }
+              } else {
+                return const Center(
+                  child: CircularProgressIndicator(),
+                );
+              }
+            },
+          ),
+        ),
+      ),
     );
   }
 }
