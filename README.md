@@ -1,7 +1,8 @@
 # PatchPal
 
 [![Flutter CI](https://github.com/yeasin50/patch_pal/actions/workflows/flutter_test.yaml/badge.svg)](https://github.com/yeasin50/patch_pal/actions/workflows/flutter_test.yaml)
-[![codecov](https://codecov.io/gh/yeasin50/patch_pal/branch/master/graph/badge.svg)](https://codecov.io/gh/yeasin50/patch_pal)
+[![codecov.io](https://codecov.io/github/yeasin50/patch_pal/coverage.svg?branch=master)]
+(https://codecov.io/github/yeasin50/patch_pal?branch=master)
 
 `patch_pal` package help to enable/disable feature of app from json file. use raw git [path like this](https://github.com/yeasin50/AssetsFor_/blob/master/apps/patch_pal/test.json)
 
@@ -70,13 +71,14 @@ to [`/example`](/example) folder.
 
 4. Then you can get value using PatchItemName
 
-   ```dart
-   PatcherViewOnFalse(patchItemName: 'rain' )
-   ```
+   - To show dialog use `PatchPal.dialog`
+   - Replace [child] with patcher view use `PatchPal.view`.
+   - To show overlay/stack use `PatchPal.overlay`
+   - To switch between widget based on value use `PatchPal.switcher`
 
 ### TODO
 
 - [ ] Config(Json) generator
 - [ ] version based features
-- [ ] alert widgets and views
+- [x] alert widgets and views
 - [ ] stream or ValueLister

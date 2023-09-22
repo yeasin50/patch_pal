@@ -1,6 +1,10 @@
+# Changelog
+
 ## 0.0.2
 
+- Merged everything into PatchPal
 - fixed static analysis
+- added widgets
 
 ## 0.0.1
 
