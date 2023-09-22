@@ -30,7 +30,8 @@ class PatchSwitcher extends StatelessWidget {
 
     return item != null
         ? item.value
-            ? onPatch ?? Text(item.message ?? 'This feature is not available right now.')
+            ? onPatch ??
+                Text(item.message ?? 'This feature is not available right now.')
             : onNoPatch
         : tristate
             ? onNoPatch

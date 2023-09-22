@@ -44,7 +44,7 @@ abstract class PatchPal {
     VoidCallback? onPositive,
     VoidCallback? onNegative,
   }) async {
-    Future<void> _dialog() async {
+    Future<void> dialog() async {
       await showPatchAlert(
         context: context,
         patchItemName: patchItemName,
@@ -57,7 +57,8 @@ abstract class PatchPal {
       );
     }
 
-    WidgetsBinding.instance.addPostFrameCallback((timeStamp) async => await _dialog());
+    WidgetsBinding.instance
+        .addPostFrameCallback((timeStamp) async => await dialog());
   }
 
   ///return a overlay if patch item is found and value is true

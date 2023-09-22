@@ -18,7 +18,8 @@ Widget patchOverlay({
         child,
         Align(
           alignment: alignment ?? Alignment.center,
-          child: overlay ?? Text(item?.message ?? 'This feature is not available right now.'),
+          child: overlay ??
+              Text(item?.message ?? 'This feature is not available right now.'),
         ),
       ],
     );

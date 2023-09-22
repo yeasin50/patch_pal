@@ -15,7 +15,8 @@ Future<void> showPatchAlert({
   VoidCallback? onNegative,
 }) async {
   final item = PatchPal.getItem(patchItemName);
-  final content = Text(message ?? item?.message ?? 'This feature is not available right now.');
+  final content = Text(
+      message ?? item?.message ?? 'This feature is not available right now.');
 
   if (item?.value == true) {
     await showDialog(

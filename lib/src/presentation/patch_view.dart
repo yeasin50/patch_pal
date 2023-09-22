@@ -12,5 +12,7 @@ Widget onTrue({
 }) {
   final item = PatchPal.getItem(patchItemName);
 
-  return item?.value == true ? onPositive ?? const Text('This feature is not available right now.') : child ?? const SizedBox.shrink();
+  return item?.value == true
+      ? onPositive ?? const Text('This feature is not available right now.')
+      : child ?? const SizedBox.shrink();
 }

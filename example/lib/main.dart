@@ -41,8 +41,8 @@ class MainApp extends StatelessWidget {
                         onNoPatch: const Text('This is a text'),
                         tristate: true,
                       ),
-                      Divider(),
-                      Text("Overlay"),
+                      const Divider(),
+                      const Text("Overlay"),
                       Container(
                         height: 200,
                         width: 200,
@@ -53,8 +53,8 @@ class MainApp extends StatelessWidget {
                           child: const Text('Beta test,raining'),
                         ),
                       ),
-                      Divider(),
-                      Text("Dialog"),
+                      const Divider(),
+                      const Text("Dialog"),
                       Builder(builder: (ctx) {
                         PatchPal.dialog(
                           context: context,
@@ -71,10 +71,10 @@ class MainApp extends StatelessWidget {
                           },
                         );
 
-                        return Text('auto show dialog');
+                        return const Text('auto show dialog');
                       }),
-                      Divider(),
-                      Text("View"),
+                      const Divider(),
+                      const Text("View"),
                       PatchPal.view(
                         patchItemName: 'rain',
                         onPositive: const Text('It is raining'),
