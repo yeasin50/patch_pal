@@ -8,7 +8,7 @@ import 'patch_repo_impl.dart';
 /// PatchPalImplement is the implementation of [PatchPal]
 /// It is used internally by [PatchPal]
 @protected
-class PatchPalImplement implements PatchPal {
+class PatchPalImplement {
   PatchPalImplement._();
   static final PatchPalImplement _instance = PatchPalImplement._();
 

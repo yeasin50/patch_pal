@@ -1,8 +1,9 @@
 # PatchPal
 
 [![Flutter CI](https://github.com/yeasin50/patch_pal/actions/workflows/flutter_test.yaml/badge.svg)](https://github.com/yeasin50/patch_pal/actions/workflows/flutter_test.yaml)
-[![codecov.io](https://codecov.io/github/yeasin50/patch_pal/coverage.svg?branch=master)]
-(https://codecov.io/github/yeasin50/patch_pal?branch=master)
+
+<!-- [![codecov.io](https://codecov.io/github/yeasin50/patch_pal/coverage.svg?branch=master)]
+(https://codecov.io/github/yeasin50/patch_pal?branch=master) -->
 
 `patch_pal` package help to enable/disable feature of app from json file. use raw git [path like this](https://github.com/yeasin50/AssetsFor_/blob/master/apps/patch_pal/test.json)
 
@@ -79,6 +80,7 @@ to [`/example`](/example) folder.
 ### TODO
 
 - [ ] Config(Json) generator
-- [ ] version based features
+- [-] version based features
+  - > combine your usecase with package_info_plus 
 - [x] alert widgets and views
 - [ ] stream or ValueLister

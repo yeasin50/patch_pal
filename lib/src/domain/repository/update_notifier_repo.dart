@@ -13,6 +13,6 @@ abstract class PatchRepo {
   final http.Client? httpClient;
 
   Future<PatchInfo> checkUpdate();
-  Future<PatchInfo> currentVersion();
+
   Future<void> saveVersion(PatchInfo info);
 }

@@ -7,7 +7,6 @@ import 'package:patch_pal/src/domain/models/patch_exception.dart';
 import '../domain/models/patch_info.dart';
 import '../domain/repository/update_notifier_repo.dart';
 
-///
 /// PatchPalImplement is the implementation of [PatchPal]
 /// It is used internally by [PatchPal] to get the patch info from the server.
 @protected
@@ -34,11 +33,6 @@ class PatchRepoImpl extends PatchRepo {
     } catch (e) {
       rethrow;
     }
-  }
-
-  @override
-  Future<PatchInfo> currentVersion() async {
-    throw UnimplementedError();
   }
 
   @override

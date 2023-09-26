@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.1.0
+
+- added update checker
+- 
+
 ## 0.0.2
 
 - Merged everything into PatchPal

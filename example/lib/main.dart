@@ -25,69 +25,8 @@ class MainApp extends StatelessWidget {
                   );
                 } else {
                   return Column(
-                    mainAxisSize: MainAxisSize.max,
                     children: [
-                      PatchPal.switcher(
-                        patchItemName: 'rain',
-                        onPatch: const Text('It is raining'),
-                        onNoPatch: const Text('This is a text'),
-                      ),
-                      PatchPal.switcher(
-                        patchItemName: 'rain',
-                        onNoPatch: const Text('This is a text'),
-                      ),
-                      PatchPal.switcher(
-                        patchItemName: 'unknown',
-                        onNoPatch: const Text('This is a text'),
-                        tristate: true,
-                      ),
-                      const Divider(),
-                      const Text("Overlay"),
-                      Container(
-                        height: 200,
-                        width: 200,
-                        color: Colors.red,
-                        child: PatchPal.overlay(
-                          patchItemName: 'rain',
-                          alignment: Alignment.bottomCenter,
-                          child: const Text('Beta test,raining'),
-                        ),
-                      ),
-                      const Divider(),
-                      const Text("Dialog"),
-                      Builder(builder: (ctx) {
-                        PatchPal.dialog(
-                          context: context,
-                          patchItemName: 'rain',
-                          title: 'Rain',
-                          message: 'It is raining',
-                          positiveText: 'Ok',
-                          negativeText: 'Cancel',
-                          onPositive: () {
-                            Navigator.pop(context);
-                          },
-                          onNegative: () {
-                            Navigator.pop(context);
-                          },
-                        );
-
-                        return const Text('auto show dialog');
-                      }),
-                      const Divider(),
-                      const Text("View"),
-                      PatchPal.view(
-                        patchItemName: 'rain',
-                        onPositive: const Text('It is raining'),
-                        child: const Text('This is a text'),
-                      ),
-                      PatchPal.view(
-                        patchItemName: 'rain',
-                        child: const Text('This is a text'),
-                      ),
-                      PatchPal.view(
-                        patchItemName: 'unknown',
-                        child: const Text('This is a text'),
-                      ),
+                      buildPatchPalWidget(context),
                     ],
                   );
                 }
@@ -100,6 +39,75 @@ class MainApp extends StatelessWidget {
           ),
         ),
       ),
+    );
+  }
+
+  Column buildPatchPalWidget(BuildContext context) {
+    return Column(
+      mainAxisSize: MainAxisSize.max,
+      children: [
+        PatchPal.switcher(
+          patchItemName: 'rain',
+          onPatch: const Text('It is raining'),
+          onNoPatch: const Text('This is a text'),
+        ),
+        PatchPal.switcher(
+          patchItemName: 'rain',
+          onNoPatch: const Text('This is a text'),
+        ),
+        PatchPal.switcher(
+          patchItemName: 'unknown',
+          onNoPatch: const Text('This is a text'),
+          tristate: true,
+        ),
+        const Divider(),
+        const Text("Overlay"),
+        Container(
+          height: 200,
+          width: 200,
+          color: Colors.red,
+          child: PatchPal.overlay(
+            patchItemName: 'rain',
+            alignment: Alignment.bottomCenter,
+            child: const Text('Beta test,raining'),
+          ),
+        ),
+        const Divider(),
+        const Text("Dialog"),
+        Builder(builder: (ctx) {
+          PatchPal.dialog(
+            context: context,
+            patchItemName: 'rain',
+            title: 'Rain',
+            message: 'It is raining',
+            positiveText: 'Ok',
+            negativeText: 'Cancel',
+            onPositive: () {
+              Navigator.pop(context);
+            },
+            onNegative: () {
+              Navigator.pop(context);
+            },
+          );
+
+          return const Text('auto show dialog');
+        }),
+        const Divider(),
+        const Text("View"),
+        PatchPal.view(
+          patchItemName: 'rain',
+          onPositive: const Text('It is raining'),
+          child: const Text('This is a text'),
+        ),
+        PatchPal.view(
+          patchItemName: 'rain',
+          child: const Text('This is a text'),
+        ),
+        PatchPal.view(
+          patchItemName: 'unknown',
+          child: const Text('This is a text'),
+        ),
+      ],
     );
   }
 }
