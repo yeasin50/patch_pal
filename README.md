@@ -2,18 +2,18 @@
 
 [![Flutter CI](https://github.com/yeasin50/patch_pal/actions/workflows/flutter_test.yaml/badge.svg)](https://github.com/yeasin50/patch_pal/actions/workflows/flutter_test.yaml)
 
-<!-- [![codecov.io](https://codecov.io/github/yeasin50/patch_pal/coverage.svg?branch=master)]
-(https://codecov.io/github/yeasin50/patch_pal?branch=master) -->
+`patch_pal` is a Flutter package that enables you to easily enable or disable features in your app by utilizing a JSON configuration file. You can use either a Gist or a raw [Git JSON file](https://github.com/yeasin50/AssetsFor_/blob/master/apps/patch_pal/test.json).
 
-`patch_pal` package help to enable/disable feature of app from json file. use raw git [path like this](https://github.com/yeasin50/AssetsFor_/blob/master/apps/patch_pal/test.json)
+## Table of Contents
 
-<!-- ## Features
+- [Getting Started](#getting-started)
+- [JSON Structure](#json-structure)
+- [Usage](#usage)
+- [TODO List](#todo-list)
 
-  -->
+## Getting Started
 
-## Getting started
-
-The Json structure will be like
+Before you begin, make sure you have a JSON configuration file prepared. The JSON structure should look like this:
 
 ```json
 {
@@ -37,50 +37,53 @@ The Json structure will be like
 
 ## Usage
 
-Include short and useful examples for package users. Add longer examples
-to [`/example`](/example) folder.
+Follow these steps to integrate `patch_pal` into your Flutter project:
 
-1. add dependency
+### Step 1: Add Dependency
 
-   ```yaml
-   dependencies:
-     patch_pal: ^0.0.2 #latest
-   ```
+Add `patch_pal` as a dependency in your `pubspec.yaml` file:
 
-   or
+```yaml
+dependencies:
+  patch_pal: ^1.0.0 # Latest version
+```
 
-   ```yaml
-   patch_pal:
-   git:
-     url: https://github.com/yeasin50/patch_pal.git
-     ref: master
-   ```
+Alternatively, if you want to use the latest from the repository, use:
 
-2. import the package
+```yaml
+patch_pal:
+  git:
+    url: https://github.com/yeasin50/patch_pal.git
+    ref: master
+```
 
-   ```dart
-    import 'package:patch_pal/patch_pal.dart';
-   ```
+### Step 2: Import the Package
 
-3. initialize config path
+Import the package in your Dart code:
 
-   ```dart
-   /// You need to setup the path, you can use [FutureBuilder]
-   /// (yourJsonConfigFilePath) should return a json
-   PatchPal.setUp(yourJsonConfigFilePath);
-   ```
+```dart
+import 'package:patch_pal/patch_pal.dart';
+```
 
-4. Then you can get value using PatchItemName
+### Step 3: Initialize the Configuration
 
-   - To show dialog use `PatchPal.dialog`
-   - Replace [child] with patcher view use `PatchPal.view`.
-   - To show overlay/stack use `PatchPal.overlay`
-   - To switch between widget based on value use `PatchPal.switcher`
+Initialize the path to your JSON configuration file using `PatchPal.init(yourJsonConfigFilePath);`. You can use a `FutureBuilder` to set up the path asynchronously. The `yourJsonConfigFilePath` should return a valid JSON file.
 
-### TODO
+### Step 4: Access Values
 
-- [ ] Config(Json) generator
-- [-] version based features
-  - > combine your usecase with package_info_plus 
-- [x] alert widgets and views
-- [ ] stream or ValueLister
+You can access values using the `PatchItemName`. Here are some common use cases:
+
+- To show a dialog, use `PatchPal.dialog`.
+- Replace a widget with a patcher view using `PatchPal.view`.
+- Show overlays or stack widgets based on value using `PatchPal.overlay`.
+- Switch between widgets based on the value using `PatchPal.switcher`.
+
+## TODO List
+
+- [ ] Config (JSON) generator
+- [x] Alert widgets and views
+- [ ] Stream or ValueListenable support
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.

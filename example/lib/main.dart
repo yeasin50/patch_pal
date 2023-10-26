@@ -14,7 +14,7 @@ class MainApp extends StatelessWidget {
       home: Scaffold(
         body: Center(
           child: FutureBuilder<void>(
-            future: PatchPal.setUp(
+            future: PatchPal.init(
               'https://raw.githubusercontent.com/yeasin50/AssetsFor_/master/apps/patch_pal/test.json',
             ),
             builder: (context, snapshot) {

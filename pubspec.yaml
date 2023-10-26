@@ -1,7 +1,8 @@
 name: patch_pal
 description: Flutter package thats helps you to patch your widget/code with json data.
-version: 0.1.0
-homepage: https://github.com/yeasin50/patch_pal
+version: 1.0.0
+repository: https://github.com/yeasin50/patch_pal
+
 
 environment:
   sdk: '>=3.1.0 <4.0.0'
