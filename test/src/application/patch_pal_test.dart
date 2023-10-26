@@ -6,7 +6,7 @@ void main() {
   //!'https://raw.githubusercontent.com/yeasin50/AssetsFor_/master/apps/patch_pal/test.json'
   group('PatchPal', () {
     setUp(() async {
-      await PatchPal.setUp(
+      await PatchPal.init(
           'https://raw.githubusercontent.com/yeasin50/AssetsFor_/master/apps/patch_pal/test.json');
     });
     // test(' should be singleton', () {
