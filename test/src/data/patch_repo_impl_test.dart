@@ -5,8 +5,8 @@ import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 
 import 'package:http/http.dart' as http;
-import 'package:patch_pal/src/data/patch_repo_impl.dart';
-import 'package:patch_pal/src/domain/models/patch_exception.dart';
+import 'package:patch_pal/src/infrastructure/patch_repo_impl.dart';
+import 'package:patch_pal/src/domain/patch_exception.dart';
 
 import 'patch_repo_impl_test.mocks.dart';
 

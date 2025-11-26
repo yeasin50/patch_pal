@@ -2,11 +2,11 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 
-import '../data/patch_pal_impl.dart';
-import '../domain/models/patch_info.dart';
+import '../domain/patch_info.dart';
 
-import '../domain/models/patch_item.dart';
+import '../domain/patch_item.dart';
 import '../presentation/presentation.dart';
+import 'patch_pal_impl.dart';
 
 /// `PatchPal` is a core class in the Patch Pal library, providing access to patch information and presentation methods.
 ///

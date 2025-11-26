@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:patch_pal/src/domain/models/patch_item.dart';
+import 'package:patch_pal/src/domain/patch_item.dart';
 
 class PatchInfo {
   const PatchInfo({

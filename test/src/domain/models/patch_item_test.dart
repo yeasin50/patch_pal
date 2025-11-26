@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:patch_pal/src/domain/models/patch_item.dart';
+import 'package:patch_pal/src/domain/patch_item.dart';
 
 void main() {
   group('Value Equality', () {

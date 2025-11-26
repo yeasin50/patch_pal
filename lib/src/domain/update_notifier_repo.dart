@@ -1,7 +1,8 @@
 import 'package:flutter/foundation.dart';
 
-import '../models/patch_info.dart';
 import 'package:http/http.dart' as http;
+
+import '../../patch_pal.dart';
 
 @protected
 abstract class PatchRepo {
