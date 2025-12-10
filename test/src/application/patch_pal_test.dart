@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:patch_pal/src/application/patch_pal.dart';
+import 'package:patch_pal/patch_pal.dart';
 
 void main() {
   //!testing with a json file from github
